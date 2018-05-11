@@ -1,25 +1,24 @@
 {
-  "name": "Gruppe5 Citater",
-  "short_name": "G5C",
-  "description": "En app indeholdende guldkorn fra gruppe 5",
-  "dir": "rtl",
-  "lang": "da-dk",
-  ​​"orientation": "portrait",
-  "prefer_related_applications": false,
-  "icons": [
-    {
-      "src": "images/manifest/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "images/manifest/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#4285f4",
-  "background_color": "#FFFFFF"
+	"name": "Gruppe5 Citater",
+	"short_name": "G5C",
+	"description": "En app indeholdende guldkorn fra gruppe 5",
+	"dir": "rtl",
+	"lang": "da-dk",
+	"orientation": "portrait",
+	"prefer_related_applications": false,
+	"icons": [{
+			"src": "images/manifest/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "images/manifest/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#4285f4",
+	"background_color": "#FFFFFF"
 }
