@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"./my-app.js";class SingleQuote extends PolymerElement{constructor(){super()}static get template(){return html`
+define(["./my-app.js"],function(_myApp){"use strict";class SingleQuote extends _myApp.PolymerElement{constructor(){super()}static get template(){return _myApp.html`
       <style include="shared-styles">
         :host {
           display: block;
@@ -11,4 +11,4 @@ import{PolymerElement,html}from"./my-app.js";class SingleQuote extends PolymerEl
         <p>[[said]]</p>
         <p>Sagt af: [[by]]</p>
       </div>
-    `}static get properties(){return{said:{type:String},by:{type:String}}}}window.customElements.define("single-quote",SingleQuote);
+    `}static get properties(){return{said:{type:String},by:{type:String}}}}window.customElements.define("single-quote",SingleQuote)});

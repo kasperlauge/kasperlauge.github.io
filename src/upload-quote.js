@@ -1,4 +1,4 @@
-import{PolymerElement,html}from"./my-app.js";class UploadQuote extends PolymerElement{constructor(){super();this.toasterOpacity=0}static get template(){return html`
+define(["./my-app.js"],function(_myApp){"use strict";class UploadQuote extends _myApp.PolymerElement{constructor(){super();this.toasterOpacity=0}static get template(){return _myApp.html`
       <style include="shared-styles">
         :host {
           display: block;
@@ -20,4 +20,4 @@ import{PolymerElement,html}from"./my-app.js";class UploadQuote extends PolymerEl
           </iron-form>
           <div class="toast" style$="opacity: {{toasterOpacity}};">Tak skal du have 🙂</div>
       </div>
-    `}static get properties(){return{said:{type:String},by:{type:String},toasterOpacity:{type:Number}}}handleSubmit(){fetch("https://gruppe5-citater.firebaseio.com/quotes.json",{body:JSON.stringify({said:this.said,by:this.by}),method:"post",headers:{"content-type":"application/json"}}).then(res=>res.json()).then(()=>{this.said="";this.by="";this.toasterOpacity=1;setTimeout(()=>{this.toasterOpacity=0},3e3)})}}window.customElements.define("upload-quote",UploadQuote);
+    `}static get properties(){return{said:{type:String},by:{type:String},toasterOpacity:{type:Number}}}handleSubmit(){fetch("https://gruppe5-citater.firebaseio.com/quotes.json",{body:JSON.stringify({said:this.said,by:this.by}),method:"post",headers:{"content-type":"application/json"}}).then(res=>res.json()).then(()=>{this.said="";this.by="";this.toasterOpacity=1;setTimeout(()=>{this.toasterOpacity=0},3e3)})}}window.customElements.define("upload-quote",UploadQuote)});
