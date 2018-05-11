@@ -1,7 +1,11 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "Gruppe 5 Citater",
+  "short_name": "G5C",
+  "description": "En app indeholdende guldkorn fra gruppe 5",
+  "dir": "rtl",
+  "lang": "da-dk",
+  ​​"orientation": "portrait",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
@@ -14,8 +18,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
-  "theme_color": "#3f51b5",
-  "background_color": "#3f51b5"
+  "theme_color": "#4285f4",
+  "background_color": "#FFFFFF"
 }

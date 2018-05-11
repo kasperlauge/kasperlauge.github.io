@@ -1351,6 +1351,9 @@
     `}static get properties(){return{page:{type:String,reflectToAttribute:!0,observer:"_pageChanged"},routeData:Object,subroute:Object}}static get observers(){return["_routePageChanged(routeData.page)"]}_routePageChanged(page){if(!page){this.page="see-quotes"}else if(-1!==["see-quotes","upload-quote"].indexOf(page)){this.page=page}else{this.page="view404"}if(!this.$.drawer.persistent){this.$.drawer.close()}}_pageChanged(page){switch(page){case"see-quotes":import("./see-quotes.js").then(bundle=>bundle&&bundle.$seeQuotes||{});break;case"upload-quote":import("./upload-quote.js").then(bundle=>bundle&&bundle.$uploadQuote||{});break;case"view404":import("./my-view404.js").then(bundle=>bundle&&bundle.$myView404||{});break;}}}window.customElements.define("my-app",MyApp);const $_documentContainer$5=document.createElement("template");$_documentContainer$5.innerHTML=`<dom-module id="shared-styles">
   <template>
     <style>
+      p h5 {
+        font-size: 16px;
+      }
       .card {
         margin: 12px;
         padding: 16px;
