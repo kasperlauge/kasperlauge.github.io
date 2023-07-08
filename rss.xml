@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kaspers Tech blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Jul 2023 14:56:32 GMT</lastBuildDate><item><title><![CDATA[Deploy a custom static site to Github Pages using Github Actions]]></title><description><![CDATA[Hi, this is my first blog post, and I think it would be fitting to use this opportunity to document and explain how this site is setup as of…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</guid><pubDate>Sat, 08 Jul 2023 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, this is my first blog post, and I think it would be fitting to use this opportunity to document and explain how this site is setup as of today.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kaspers Tech blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Jul 2023 15:09:17 GMT</lastBuildDate><item><title><![CDATA[Deploy a custom static site to Github Pages using Github Actions]]></title><description><![CDATA[Hi, this is my first blog post, and I think it would be fitting to use this opportunity to document and explain how this site is setup as of…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</guid><pubDate>Sat, 08 Jul 2023 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, this is my first blog post, and I think it would be fitting to use this opportunity to document and explain how this site is setup as of today.&lt;/p&gt;
 &lt;h1&gt;Table of contents&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;#GithubPages&quot;&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
@@ -15,15 +15,102 @@
 &lt;h2&gt;Create repositories &lt;a name=&quot;CreateRepositories&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Alright, so in order to create a static site, we first need to create two repositories.&lt;/p&gt;
 &lt;p&gt;The first repository is called &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt;. This is what is being served on &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt;. create the repository with the following settings (of course changing the username to your own):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gh-pages-repo.png&quot; alt=&quot;Create Github Pages repository&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0433861f88db46b81f5da2002694446a/63a68/gh-pages-repo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABJ0AAASdAHeZh94AAACM0lEQVR42qVUi26cMBDk/38xTVPlAodt4DB+P2Cq3SN3aXpBUWtptNjC433NNjEG/Hp5Qdu2eDudcDq94fn5J56efkBIiW3bUGu9obBd72flfk6ryaXirBaI0aAfDBZjsRgDYy2sdfA+IMQIHwLDeY8QIsJtf7f0eEMvGOuxGAfrAjxdiBEpJb5EP313bexhShiHgQlKLsg5Y55nKKUwTiNiTNeft0fX/15NzhXd+YL2LNBLhRATFrNA9AKSSSfkkvFdRxsKqZTKnqWckUuBWkYoPUJcJEY9Qc0DZqu5AKUUBj1S6tXWdf3oYcYwDJimCcuywBjLefTOwXJh7F4gC+c8g75np3FxGpOdkUr6QFgK+nPPpOM4sYdHmdq+KAZFylWmLYUQY2S8V3X7hD/O9suP0NgEtEpDiB7WuWt+cr7Zz985l8NWasoKDBeNrjtzyDElbpXENnJP0v6dmHBISEGE4DHrhRPOimB1pCsCqSRiXe8kxPcVmotNeH49Q0mBtu0ghWQZ/etqTNrwJjWUlOi6nlVCYXKL7DIka0OF9SsWX6FdRV2/UEotCVIK9L3gXFGTrx8a9VGzHKmmobEj1AipJvRqhJAD54z6kQuUCkLeENKKkK84JiwFWmtWiXOOZ1veJZgSybEi5m3HTniUQ+or8qrrJc/C/10NTV+9GFxmDePcbZDGfaheB2mCCSuDikLeHhLSMNDOo50dbIgw+8Sm6pI1xsHYfQCHgNlm+LQ+JPwN5GweBQxAVa4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Create Github Pages repository&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0433861f88db46b81f5da2002694446a/63a68/gh-pages-repo.png&quot;
+        srcset=&quot;/static/0433861f88db46b81f5da2002694446a/c26ae/gh-pages-repo.png 158w,
+/static/0433861f88db46b81f5da2002694446a/6bdcf/gh-pages-repo.png 315w,
+/static/0433861f88db46b81f5da2002694446a/63a68/gh-pages-repo.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;We initialize the repository with an empty readme so we don&apos;t have to do it manually. We will overwrite whats in the repository via a Github Workflow anyway.&lt;/p&gt;
 &lt;p&gt;Next create the repository actually containing the code. You can use the following settings:
-&lt;img src=&quot;./gh-pages-repo-code.png&quot; alt=&quot;Create Github Pages code repository&quot;&gt;&lt;/p&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/74d814dd503c90ed3730386327e57df8/63a68/gh-pages-repo-code.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 99.36708860759494%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABJ0AAASdAHeZh94AAACFklEQVR42qVUi3LbIBDU//9h487UsePYeiAkEO/HZu7kVzq1m7TM7HAgsRy3C808z/i52eD9cMB+t8Nuv8fmZYOXHxuc2halVqSUkfMKii/jlO/nE2otaIxP6KRBNzn0k4P3AcauvXMexlpY6xg8Npa/W3fG+dtiDJM2tHCeNeSkoBcLrRWMMbDWcl9rxXdaY43BOI5IOaGc05/khL7vIQbBu1P7KnFjbMRuP+BwPOK97eF8gNIKbdtxlrQBkX2ZsJaKnAtnSDUggk4NGLVkSD3xXCmF/6OeY0ZGqeXTZg1lwccTI0hxrTXMsjCUUpgJs+JYKQ2t13mxSIyLhFwmJr8SOucghOCFi7GcBW34N+AOl5IQmt9r8xWyUupDNEQiR8kmJgvRBvd1Kn/AM4EaFysGMWK7fUXfi7NJLZuWTHyJCc57WOdZpIeEo60Qk2YxyDIxxustIYL1tjjO7FaWZxk6g/Z0YqWP70d0Xc835F9bE2JiE7+9HbD9tcUgBKy/ZRdCWDP2GcYXhrL0MNRHhAFSSkzzfDUuvSIxrUanl4XimApiqgipwicS7tFdthav+wMOxxbdMELI+ZNRv31kyuKi4sKqmrOigWtpXIC2GdplKJMxm4xcnohiFoPTqcXx1LJN/rfxe9j1Am0/cIZkmxgTI3AcQcK5UK6gOj4kJBFoMR09hIjg49qHCH/tb4Q2FPhYH17LD8tjH0Ws2AZnAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Create Github Pages code repository&quot;
+        title=&quot;&quot;
+        src=&quot;/static/74d814dd503c90ed3730386327e57df8/63a68/gh-pages-repo-code.png&quot;
+        srcset=&quot;/static/74d814dd503c90ed3730386327e57df8/c26ae/gh-pages-repo-code.png 158w,
+/static/74d814dd503c90ed3730386327e57df8/6bdcf/gh-pages-repo-code.png 315w,
+/static/74d814dd503c90ed3730386327e57df8/63a68/gh-pages-repo-code.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;I would like to keep the repository private. There is no reason to initialize this repository, as we need to add some code and can just do that from the command line.&lt;/p&gt;
 &lt;h2&gt;Create a static site &lt;a name=&quot;CreateStaticSite&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In order to have something to show we need to create a site. This can be whatever static files you want to show. I chose to create a &lt;a href=&quot;https://www.gatsbyjs.com/&quot;&gt;GatsbyJs&lt;/a&gt; site using the blog template created by Kyle Mathews at GatsbyJS. This provides an out-of-the-box performant blog powered by markdown posts. A fast way to get started. As mentioned the site could be whatever as long as it is based of static files like HTML, Javascript, CSS, etc files. This could eg. be a SPA written in Angular or React, or also simply a plain index.html file.&lt;/p&gt;
 &lt;p&gt;Using the GatsbyJS template I got roughly (I have removed the standard blog md files, and replaced with my own.) the following files:
-&lt;img src=&quot;./static-site.png&quot; alt=&quot;Static site files&quot;&gt;&lt;/p&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 498px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4e9d3e92ed832845e198e475438fdd95/79e1b/static-site.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 121.51898734177216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABJ0AAASdAHeZh94AAAB/UlEQVR42p2V25KzIBCEfYh4wAMgghsFEcl53/+9+i/IJrnZqn/xYi4sra96enrGjHGO6/WKx+OB8/mM78cDt9s9PiulUBQFqqr6bzVNA8YYsrqu0XUdBjGAc448zyPkr6Bfgbzv4U8ey2JASAVCSKx9QEIwSIV1sbBmQd/3KMs0dWVZPoGcI2vqGpQzCKMgly+QmqDI8zR1tEXTNuC8Dy0/yXJSGI4Sgxwg5YBgxV+BQURQGKzLnr1zKKkwCBEHRClN8vDVcgQGJcE3pWSUHV6GSmn5NZSflmv0QmBUClVZ7YJ9gPwVG4HL5YxxHJO8+11h04ByAe83eO8xjgp1YgY/ORRhKKHlHsZoLIvFujroedoXbC6QdZTgOFFYu2LbNkgpURZFspfvTaGUwBgO7y8RaK2FW1doreMapgH5B2jtBqM1pmmKXgrRJ6l8K+w6gnnmcM7DGIN5mnE6+Rjw3UCtQ8vnZ7vOYZqOO6fMkDFG4JyAtQ7OrZCDREWqeBdTVq9t22ewOQ/AHtNksG0urmEoIQRIgsKwEIzRHw81h55NDPesQx6XOJy/ZjF8Fy68+joia7sG2h7hN4/7/Rb/KyGLh8MhycMIbRtkpKXgo8G6hvw5LGaJkUkdSrCn7hiyEN6yyOOVDoPId2zJE0hQ0TYAyVvyu3ZcmwhkDf4BHIh9UDoKJ10AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Static site files&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4e9d3e92ed832845e198e475438fdd95/79e1b/static-site.png&quot;
+        srcset=&quot;/static/4e9d3e92ed832845e198e475438fdd95/c26ae/static-site.png 158w,
+/static/4e9d3e92ed832845e198e475438fdd95/6bdcf/static-site.png 315w,
+/static/4e9d3e92ed832845e198e475438fdd95/79e1b/static-site.png 498w&quot;
+        sizes=&quot;(max-width: 498px) 100vw, 498px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Lets connect the code to our repository. Type the following in the terminal in the directory for the created code.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git init
 git add .
@@ -42,7 +129,36 @@ git push -u origin main&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ol&gt;
 &lt;p&gt;But that is a lot of manual steps to perform, which I would like to automate. This can be automated using a Github Action.&lt;/p&gt;
 &lt;p&gt;You can create a Workflow using Github actions by navigating to your repository and click on the &quot;Actions&quot;-tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gh-actions.png&quot; alt=&quot;Find Github Actions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c370156262a26f60cd5e9ef897e3c1bf/63a68/gh-actions.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.93670886075949%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABUUlEQVR42n2R627jIBBG/f4vuVolaZUmNnfDMMBZGac/umqLdIQNH2cQs7x/PLm+3VmN5/7cCCGR4k7aCykLMQthL4SUibtgQ8L6ONeOvfja83FntZElxIhUJRdhWw1hMzzuD56rxTqPsY49l0nVRutjoq3Pc0fhXOr8P1is9ez7Tq2VGhO9tVkxhJ2mOmGMF30y+ufc0HpmWmuTxbiI84EQE6Uq2gcXk/izJW5BufrKxQlvqXOL/9O4eOUaGrcjYyJLLmWaP8dxkav1/H063t3OIwofQVhzw8jAVFgFbD1xCmtpM+dyZeGb4YLDbBtSCl0VrUKVQm9KHwNp/Sj9AmoVSs7z+1vhGizGWGJK5FzQ1lBt9H42Jev5pmOcQhGZuR+FwVqe6zZx3k+ZSJ1P0wdIG1/yR0N/FTpnMdbinCelRFVF6ik8VEfjvgp13vIQ/gPJX75hkaNpewAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Find Github Actions&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c370156262a26f60cd5e9ef897e3c1bf/63a68/gh-actions.png&quot;
+        srcset=&quot;/static/c370156262a26f60cd5e9ef897e3c1bf/c26ae/gh-actions.png 158w,
+/static/c370156262a26f60cd5e9ef897e3c1bf/6bdcf/gh-actions.png 315w,
+/static/c370156262a26f60cd5e9ef897e3c1bf/63a68/gh-actions.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;What this basically does, is creating a a YAML-file in a &lt;code class=&quot;language-text&quot;&gt;.github/workflows&lt;/code&gt; folder using some predefined templates. It is not necessary to create a workflow using the UI, but can be done using just code by creating said file in the same location.&lt;/p&gt;
 &lt;p&gt;The actions we would need to do in a workflow file is similar to the manual steps described above, but with a few extra steps in order to have a full workflow:&lt;/p&gt;
 &lt;ol&gt;
@@ -135,13 +251,100 @@ jobs:
 &lt;/ol&gt;
 &lt;p&gt;You might have noticed in above file that two secret variables are referenced:&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;secrets.BOT_EMAIL&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;secrets.BOT_TOKEN&lt;/code&gt;. These variables are setup in in the &lt;code class=&quot;language-text&quot;&gt;Settings&lt;/code&gt;-tab, as shown in below image:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./secret-setup.png&quot; alt=&quot;Secret setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6e714784c55c0fc8056e54dbabd193d8/63a68/secret-setup.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABM0lEQVR42qWSy2rEMAxF8/8/00VXpd/QVZdDYRbdTAbHbzuWH7dYGTeh9AEdwcWJsI+uJU8+rLAuQFsHYz2cj/yvjIU2Dvq2LvMVViygUkH5qMJKtGkCgFIKUko4RowBxhgYBlpoqZAT8d6unDMSESuX8nmOgT1hnQMRoXG6wbqIWTgo091HKG0hlYKUElopCCG4SLARtH4BEmVobbjyiBAjlNLs0lrLCiGwM0qEWgqEkzjNZ5zFO0orO7Bf1/vAidoq1pwY3h13QGuNNWJ8ny5veHh5xNPrM0IKO3BNCWJZuOo4cARsfe4DyKxR5LvYHBLBef/jplGk1soqte65Vlnt1v1tKDmzyzHBe2LankjCfJmhpOQB1dp+dfsncE0Zar4i+j7FwroL2PvS32H9J+QI/ABajmCSR2NTsQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Secret setup&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6e714784c55c0fc8056e54dbabd193d8/63a68/secret-setup.png&quot;
+        srcset=&quot;/static/6e714784c55c0fc8056e54dbabd193d8/c26ae/secret-setup.png 158w,
+/static/6e714784c55c0fc8056e54dbabd193d8/6bdcf/secret-setup.png 315w,
+/static/6e714784c55c0fc8056e54dbabd193d8/63a68/secret-setup.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;BOT_EMAIL&lt;/code&gt; can be whatever email. I used &lt;code class=&quot;language-text&quot;&gt;kasperbot@kasperlauge.io&lt;/code&gt;. This is just used for the commit made by the Github Workflow. The &lt;code class=&quot;language-text&quot;&gt;BOT_TOKEN&lt;/code&gt; should be a token with access to the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt; repository. This is created by navigating to:
 Account (by clicking you profile icon on the top right) &gt; Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Tokens (classic)
 Then press &lt;code class=&quot;language-text&quot;&gt;Generate new token&lt;/code&gt; (Choose classic).&lt;/p&gt;
 &lt;p&gt;Generate the token with the following settings (The settings not shown is empty):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./token-settings.png&quot; alt=&quot;Token setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0827b5d812f36d82929ebe5d12a2c3d0/63a68/token-settings.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.86075949367089%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABJ0AAASdAHeZh94AAABOUlEQVR42pVTi27FIAjt/3/pltW2Cgq+ehbsY0t2b5aSnGgQj3CEKcaElARm+76PVUQQQkAIBCIeezIQ3TF/bLf7wLSuK5xbIJJGsEFV4b0/SQN8IHh/gKMgJoGIjocvlFIG7xRjxLb5IyArUhYMnw/gGOGJQakgaUPUBpKKqBWtdfS+o+87eu935lPOBaoZrXe0ehyYBLNbEIhhkliMEdSB9r5sI3zltBJSSqeuh7ZHFh3/2UvCyAQ3zxDVm1xzRa4dpQO1PSXUgkARNWfkE0kKohSw6SnlGaFl8zU7MDMuuYgZblnG79danxG21uCcw7Ztt484Yt38QCkPCe0nmRi1lrs3rexDU4Xmn5Kv84G3hLXi4+NzNPVlzEe/+hCwjanhl5m+LTmcly6zXkw2Fapjtf68puM34TcPHK/xwEQZ9wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Token setup&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0827b5d812f36d82929ebe5d12a2c3d0/63a68/token-settings.png&quot;
+        srcset=&quot;/static/0827b5d812f36d82929ebe5d12a2c3d0/c26ae/token-settings.png 158w,
+/static/0827b5d812f36d82929ebe5d12a2c3d0/6bdcf/token-settings.png 315w,
+/static/0827b5d812f36d82929ebe5d12a2c3d0/63a68/token-settings.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Copy the token and paste it in the secrets for the &lt;code class=&quot;language-text&quot;&gt;my-blog&lt;/code&gt; repository. Name it &lt;code class=&quot;language-text&quot;&gt;BOT_TOKEN&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now we should be ready to deploy. Make a small change to your &lt;code class=&quot;language-text&quot;&gt;my-blog&lt;/code&gt; repository. Commit and push that change, and see your Workflow in action.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./workflow-action.png&quot; alt=&quot;Github Action&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0952a3cc6d9b62b7b1906b4fcf35a9c0/63a68/workflow-action.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.810126582278485%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABJ0AAASdAHeZh94AAAA7ElEQVR42o1QXW/EMAjL//+d22273jVtPoCQtJ6gfahu9zBLlkEYZBE+v+74uP1gXhMe84Jc2VlInN6fan0qjLhmpEIo1Jw+J0FMBaGUiqYK4oYlZZRc8Hw8MccFtRKYxWdEDGmKsW3oxnFQ+wCxgKWhj4Fw+55ARD7IhdBNc0VKGaod27Zj3+G02vtTjeZvTZ1WB0tRagWLuMFQqCKmjMoCaR1NB0QPNVbpkLO2OYu61zTYMYt6BacF92lCjNHf0Xt3tcSGNo7UV1gw8wS8QauEZU2o9gpVN9r/TA365qCwQHv/e/Dq21+3/oFf2Y8kfiz2FSIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Github Action&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0952a3cc6d9b62b7b1906b4fcf35a9c0/63a68/workflow-action.png&quot;
+        srcset=&quot;/static/0952a3cc6d9b62b7b1906b4fcf35a9c0/c26ae/workflow-action.png 158w,
+/static/0952a3cc6d9b62b7b1906b4fcf35a9c0/6bdcf/workflow-action.png 315w,
+/static/0952a3cc6d9b62b7b1906b4fcf35a9c0/63a68/workflow-action.png 629w&quot;
+        sizes=&quot;(max-width: 629px) 100vw, 629px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;And thats it! Now you should have a custom static static site running on Github Pages using a CI/CD flow. You can change your static site to what ever and after you push to your repository, it should be automatically deployed to Github Pages.&lt;/p&gt;</content:encoded></item></channel></rss>
