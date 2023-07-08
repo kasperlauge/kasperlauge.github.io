@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Jul 2023 12:49:25 GMT</lastBuildDate><item><title><![CDATA[Deploy a custom static site to Github Pages using Github Actions]]></title><description><![CDATA[Hi, this is my first blog post, and I think it would be fitting to use this oppertunity to document and explain how I as of today setup this…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</guid><pubDate>Sat, 08 Jul 2023 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, this is my first blog post, and I think it would be fitting to use this oppertunity to document and explain how I as of today setup this site.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Jul 2023 13:02:01 GMT</lastBuildDate><item><title><![CDATA[Deploy a custom static site to Github Pages using Github Actions]]></title><description><![CDATA[Hi, this is my first blog post, and I think it would be fitting to use this oppertunity to document and explain how I as of today setup this…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/deploy-custom-site-gh-pages/</guid><pubDate>Sat, 08 Jul 2023 16:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, this is my first blog post, and I think it would be fitting to use this oppertunity to document and explain how I as of today setup this site.&lt;/p&gt;
 &lt;h1&gt;Table of contents&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;#GithubPages&quot;&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
@@ -15,15 +15,15 @@
 &lt;h2&gt;Create repositories &lt;a name=&quot;GithubActions&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Alright, so in order to create a static site, we first need to create two repositories.&lt;/p&gt;
 &lt;p&gt;The first repository is called &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt;. This is what is being served on &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt;. create the repository with the following settings (of course changing the username to your own):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gh-pages-repo.png&quot; alt=&quot;Create Github Pages repository&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gh-pages-repo.PNG&quot; alt=&quot;Create Github Pages repository&quot;&gt;&lt;/p&gt;
 &lt;p&gt;We initialize the repository with an empty readme so we don&apos;t have to do it manually. We will overwrite whats in the repository via a Github Workflow anyway.&lt;/p&gt;
 &lt;p&gt;Next create the repository actually containing the code. You can use the following settings:
-&lt;img src=&quot;./gh-pages-repo-code.png&quot; alt=&quot;Create Github Pages code repository&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;./gh-pages-repo-code.PNG&quot; alt=&quot;Create Github Pages code repository&quot;&gt;&lt;/p&gt;
 &lt;p&gt;I would like to keep the repository private. There is no reason to initialize this repository, as we need to add some code and can just do that from the command line.&lt;/p&gt;
 &lt;h2&gt;Create a static site &lt;a name=&quot;CreateStaticSite&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In order to have something to show we need to create a site. This can be whatever static files you want to show. I chose to create a &lt;a href=&quot;https://www.gatsbyjs.com/&quot;&gt;GatsbyJs&lt;/a&gt; site using the blog template created by Kyle Mathews at GatsbyJS. This provides an out-of-the-box performant blog powered by markdown posts. A fast way to get started. As mentioned the site could be whatever as long as it is based of static files like HTML, Javascript, CSS, etc files. This could eg. be a SPA written in Angular or React, or also simply a plain index.html file.&lt;/p&gt;
 &lt;p&gt;Using the GatsbyJS template I got roughly (I have removed the standard blog md files, and replaced with my own.) the following files:
-&lt;img src=&quot;./static-site.png&quot; alt=&quot;Static site files&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;./static-site.PNG&quot; alt=&quot;Static site files&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Lets connect the code to our repository. Type the following in the terminal in the directory for the created code.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git init
 git add .
@@ -42,7 +42,7 @@ git push -u origin main&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ol&gt;
 &lt;p&gt;But that is a lot of manual steps to perform, which I would like to automate. This can be automated using a Github Action.&lt;/p&gt;
 &lt;p&gt;You can create a Workflow using Github actions by navigating to your repository and click on the &quot;Actions&quot;-tab.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gh-actions.png&quot; alt=&quot;Find Github Actions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gh-actions.PNG&quot; alt=&quot;Find Github Actions&quot;&gt;&lt;/p&gt;
 &lt;p&gt;What this basically does, is creating a a YAML-file in a &lt;code class=&quot;language-text&quot;&gt;.github/workflows&lt;/code&gt; folder using some predefined templates. It is not necessary to create a workflow using the UI, but can be done using just code by creating said file in the same location.&lt;/p&gt;
 &lt;p&gt;The actions we would need to do in a workflow file is similar to the manual steps described above, but with a few extra steps in order to have a full workflow:&lt;/p&gt;
 &lt;ol&gt;
@@ -122,14 +122,16 @@ jobs:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You might have noticed in above file that two secret variables are referenced:&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;secrets.BOT_EMAIL&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;secrets.BOT_TOKEN&lt;/code&gt;. These variables are setup in in the &lt;code class=&quot;language-text&quot;&gt;Settings&lt;/code&gt;-tab, as shown in below image:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./secret-setup.png&quot; alt=&quot;Secret setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./secret-setup.PNG&quot; alt=&quot;Secret setup&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;BOT_EMAIL&lt;/code&gt; can be whatever email. I used &lt;code class=&quot;language-text&quot;&gt;kasperbot@kasperlauge.io&lt;/code&gt;. This is just used for the commit made by the Github Workflow. The &lt;code class=&quot;language-text&quot;&gt;BOT_TOKEN&lt;/code&gt; should be a token with access to the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;username&gt;.github.io&lt;/code&gt; repository. This is created by navigating to:
 Account (by clicking you profile icon on the top right) &gt; Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Tokens (classic)
 Then press &lt;code class=&quot;language-text&quot;&gt;Generate new token&lt;/code&gt; (Choose classic).&lt;/p&gt;
 &lt;p&gt;Generate the token with the following settings (The settings not shown is empty):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./token-settings.png&quot; alt=&quot;Token setup&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./token-settings.PNG&quot; alt=&quot;Token setup&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Copy the token and paste it in the secrets for the &lt;code class=&quot;language-text&quot;&gt;my-blog&lt;/code&gt; repository. Name it &lt;code class=&quot;language-text&quot;&gt;BOT_TOKEN&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Now we should be ready to deploy. Make a small change to your &lt;code class=&quot;language-text&quot;&gt;my-blog&lt;/code&gt; repository. Commit and push that change, and see your Workflow in action.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;Now we should be ready to deploy. Make a small change to your &lt;code class=&quot;language-text&quot;&gt;my-blog&lt;/code&gt; repository. Commit and push that change, and see your Workflow in action.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./workflow-action.PNG&quot; alt=&quot;Github Action&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And thats it! Now you should have a custom static static site running on Github Pages using a CI/CD flow. You can change your static site to what ever and after you push to your repository, it should be automatically deployed to Github Pages.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
 &lt;p&gt;I&apos;m sure I&apos;ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here&apos;s a great quote from this Wikipedia on
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
